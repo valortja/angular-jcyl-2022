@@ -1,0 +1,97 @@
+----------------------------------------------
+Ejecicio 0: Comandos ejecutados
+----------------------------------------------
+
+Microsoft Windows [Versión 10.0.19044.1586]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+N:\>npm config set proxy http://valortja:************@proxy.jcyl.es:80
+
+N:\>npm config set https-proxy http://valortja:************@proxy.jcyl.es:80
+
+N:\>npm i -g @angular/cli
+
+added 196 packages, and audited 197 packages in 22s
+
+24 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm notice
+npm notice New minor version of npm available! 8.6.0 -> 8.7.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.7.0
+npm notice Run npm install -g npm@8.7.0 to update!
+npm notice
+
+N:\>npm install -g npm@8.7.0
+
+added 1 package, and audited 197 packages in 2s
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+N:\>npm fund
+N:\
+
+
+N:\>c:
+
+C:\>cd Angular
+
+C:\Angular>ng new angular-jcyl
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+CREATE angular-jcyl/angular.json (3075 bytes)
+CREATE angular-jcyl/package.json (1075 bytes)
+CREATE angular-jcyl/README.md (1065 bytes)
+CREATE angular-jcyl/tsconfig.json (863 bytes)
+CREATE angular-jcyl/.editorconfig (274 bytes)
+CREATE angular-jcyl/.gitignore (548 bytes)
+CREATE angular-jcyl/.browserslistrc (600 bytes)
+CREATE angular-jcyl/karma.conf.js (1429 bytes)
+CREATE angular-jcyl/tsconfig.app.json (287 bytes)
+CREATE angular-jcyl/tsconfig.spec.json (333 bytes)
+CREATE angular-jcyl/.vscode/extensions.json (130 bytes)
+CREATE angular-jcyl/.vscode/launch.json (474 bytes)
+CREATE angular-jcyl/.vscode/tasks.json (938 bytes)
+CREATE angular-jcyl/src/favicon.ico (948 bytes)
+CREATE angular-jcyl/src/index.html (297 bytes)
+CREATE angular-jcyl/src/main.ts (372 bytes)
+CREATE angular-jcyl/src/polyfills.ts (2338 bytes)
+CREATE angular-jcyl/src/styles.css (80 bytes)
+CREATE angular-jcyl/src/test.ts (745 bytes)
+CREATE angular-jcyl/src/assets/.gitkeep (0 bytes)
+CREATE angular-jcyl/src/environments/environment.prod.ts (51 bytes)
+CREATE angular-jcyl/src/environments/environment.ts (658 bytes)
+CREATE angular-jcyl/src/app/app-routing.module.ts (245 bytes)
+CREATE angular-jcyl/src/app/app.module.ts (393 bytes)
+CREATE angular-jcyl/src/app/app.component.html (23364 bytes)
+CREATE angular-jcyl/src/app/app.component.spec.ts (1091 bytes)
+CREATE angular-jcyl/src/app/app.component.ts (216 bytes)
+CREATE angular-jcyl/src/app/app.component.css (0 bytes)
+√ Packages installed successfully.
+
+C:\Angular>cd angular-jcyl
+
+C:\Angular\angular-jcyl> ng serve -o
+
+
+√ Browser application bundle generation complete.
+
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   1.97 MB |
+polyfills.js          | polyfills     | 294.85 kB |
+styles.css, styles.js | styles        | 173.23 kB |
+main.js               | main          |  50.13 kB |
+runtime.js            | runtime       |   6.52 kB |
+
+                      | Initial Total |   2.49 MB
+
+Build at: 2022-04-25T10:25:44.101Z - Hash: 6b35c9f37c23e640 - Time: 7986ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+√ Compiled successfully.
