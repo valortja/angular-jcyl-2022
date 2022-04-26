@@ -95,3 +95,26 @@ Build at: 2022-04-25T10:25:44.101Z - Hash: 6b35c9f37c23e640 - Time: 7986ms
 
 
 √ Compiled successfully.
+
+
+C:\Angular\angular-jcyl>git remote -v
+
+C:\Angular\angular-jcyl>git remote add origin https://github.com/valortja/angular-jcyl-2022.git
+
+C:\Angular\angular-jcyl>git branch -M main
+
+C:\Angular\angular-jcyl>git push -u origin main
+info: detecting host provider for 'http://proxy.jcyl.es/'...
+fatal: analizando "*.jcyl.es" - Cuantificador {x,y} despu├®s de nada.
+Enumerating objects: 37, done.
+Counting objects: 100% (37/37), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (37/37), 207.28 KiB | 10.91 MiB/s, done.
+Total 37 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/valortja/angular-jcyl-2022.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\Angular\angular-jcyl>git tag ejercicio_00 HEAD
