@@ -1,0 +1,20 @@
+----------------------------------------------
+Ejecicio 1: Comandos ejecutados
+----------------------------------------------
+
+Microsoft Windows [Versión 10.0.19044.1586]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Angular\angular-jcyl>git push origin main
+info: detecting host provider for 'http://proxy.jcyl.es/'...
+fatal: analizando "*.jcyl.es" - Cuantificador {x,y} despu├®s de nada.
+Everything up-to-date
+
+C:\Angular\angular-jcyl>ng g component Solicitud
+CREATE src/app/solicitud/solicitud.component.html (24 bytes)
+CREATE src/app/solicitud/solicitud.component.spec.ts (647 bytes)
+CREATE src/app/solicitud/solicitud.component.ts (287 bytes)
+CREATE src/app/solicitud/solicitud.component.css (0 bytes)
+UPDATE src/app/app.module.ts (487 bytes)
+
+C:\Angular\angular-jcyl>
