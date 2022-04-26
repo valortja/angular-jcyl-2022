@@ -13,7 +13,11 @@ export class SolicitudComponent implements OnInit {
     apellido2: 'Segura'
   };
 
-  constructor() { }
+  constructor() {
+    setInterval(() => {
+        this.solicitud.nombre = 'Armando-' + Math.floor(Math.random() * (101));
+    }, 2000);
+  }
 
   ngOnInit(): void {
   }
