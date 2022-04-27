@@ -10,3 +10,16 @@
 <button (click)="guardar('param1')">Guardar</button>
 <button (click)="eliminar('param2')">Eliminar</button>
 <button (click)="limpiar('param3')">Limpiar</button>
+<br/>
+<br/>
+<div>
+  <h3>Solicitud de Comedor</h3>
+  <p>Nueva solicitud</p>
+  <label>Nombre</label><br/>
+  <input (keyup)="nombre($event)"><br/>
+  <label>Apellido1</label><br/>
+  <input (keyup)="apellido1($event)"><br/>
+  <label>Apellido2</label><br/>
+  <input (keyup)="apellido2($event)"><br/>
+  <button (click)="enviar()">Enviar</button>
+</div>

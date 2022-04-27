@@ -1,11 +1,12 @@
+body {
+  font-family: Arial, Helvetica, Verdana;
+}
 .text-success {
   color: green
 }
-
 .text-primary {
   color:blue
 }
-
 .text_danger {
   color: red
 }

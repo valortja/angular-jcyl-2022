@@ -36,4 +36,22 @@ export class SolicitudComponent implements OnInit {
     console.log('limpiar ' + param + '!')
   }
 
+  enviar() {
+    console.log('enviar!')
+  }
+
+  nombre($event: KeyboardEvent) {
+    const element = $event.target as HTMLInputElement
+    this.solicitud.nombre = element.value;
+  }
+
+  apellido1($event: KeyboardEvent) {
+    const element = $event.target as HTMLInputElement
+    this.solicitud.apellido1 = element.value;
+  }
+
+  apellido2($event: KeyboardEvent) {
+    const element = $event.target as HTMLInputElement
+    this.solicitud.apellido2 = element.value;
+  }
 }
