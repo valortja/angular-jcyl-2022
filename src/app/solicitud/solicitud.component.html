@@ -1,2 +1,12 @@
 <p>{{solicitud.nombre + ' ' + solicitud.apellido1 + ' ' + solicitud.apellido2}}</p>
-<p [style.color]=" +solicitud.numero > 50 ? 'red' : 'blue'">solicitud works!</p>
+<p [style.color]=" + solicitud.numero > 50 ? 'red' : 'blue'">solicitud works!</p>
+<p [ngStyle]="{'background-color':solicitud.numero > 50 ? 'lightgreen' : 'orange', 'font-weight': solicitud.numero > 50 ? 'bold' : 'normal' }">solicitud works!</p>
+<p [ngClass]="{
+    'text-success':solicitud.numero <= 33,
+    'text-primary':solicitud.numero > 33 && solicitud.numero < 66,
+    'text-danger':solicitud.numero >=66
+  }">{{ solicitud.nombre }} ({{ solicitud.apellido1 }} {{ solicitud.apellido2 }})
+</p>
+<button (click)="guardar('param1')">Guardar</button>
+<button (click)="eliminar('param2')">Eliminar</button>
+<button (click)="limpiar('param3')">Limpiar</button>

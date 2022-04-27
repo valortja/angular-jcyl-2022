@@ -24,4 +24,16 @@ export class SolicitudComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  guardar(param:string) {
+    console.log('guardar ' + param + '!')
+  }
+
+  eliminar(param:string) {
+    console.log('eliminar ' + param + '!')
+  }
+
+  limpiar(param:string) {
+    console.log('limpiar ' + param + '!')
+  }
+
 }
