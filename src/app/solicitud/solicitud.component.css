@@ -1,5 +1,6 @@
 body {
   font-family: Arial, Helvetica, Verdana;
+  background-color: gray;
 }
 .text-success {
   color: green
@@ -9,4 +10,17 @@ body {
 }
 .text_danger {
   color: red
+}
+fieldset {
+  all: revert;
+}
+legend {
+  all: revert;
+  font-size: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555;
+}
+.reset {
+   all: revert;
 }

@@ -9,6 +9,7 @@ export class SolicitudComponent implements OnInit {
 
   solicitud = {
     numero: 0,
+    nif: '9999999R',
     nombre: 'Armando',
     apellido1: 'Guerra',
     apellido2: 'Segura'
@@ -17,7 +18,7 @@ export class SolicitudComponent implements OnInit {
   constructor() {
     setInterval(() => {
         this.solicitud.numero = Math.floor(Math.random() * (101));
-        this.solicitud.nombre = 'Armando-' + this.solicitud.numero;
+        //this.solicitud.nombre = 'Armando-' + this.solicitud.numero;
     }, 2000);
   }
 
@@ -38,6 +39,11 @@ export class SolicitudComponent implements OnInit {
 
   enviar() {
     console.log('enviar!')
+  }
+
+  nif($event: KeyboardEvent) {
+    const element = $event.target as HTMLInputElement
+    this.solicitud.nif = element.value;
   }
 
   nombre($event: KeyboardEvent) {

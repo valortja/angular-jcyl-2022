@@ -1,25 +1,114 @@
-<p>{{solicitud.nombre + ' ' + solicitud.apellido1 + ' ' + solicitud.apellido2}}</p>
-<p [style.color]=" + solicitud.numero > 50 ? 'red' : 'blue'">solicitud works!</p>
-<p [ngStyle]="{'background-color':solicitud.numero > 50 ? 'lightgreen' : 'orange', 'font-weight': solicitud.numero > 50 ? 'bold' : 'normal' }">solicitud works!</p>
-<p [ngClass]="{
-    'text-success':solicitud.numero <= 33,
-    'text-primary':solicitud.numero > 33 && solicitud.numero < 66,
-    'text-danger':solicitud.numero >=66
-  }">{{ solicitud.nombre }} ({{ solicitud.apellido1 }} {{ solicitud.apellido2 }})
-</p>
-<button (click)="guardar('param1')">Guardar</button>
-<button (click)="eliminar('param2')">Eliminar</button>
-<button (click)="limpiar('param3')">Limpiar</button>
-<br/>
-<br/>
-<div>
-  <h3>Solicitud de Comedor</h3>
-  <p>Nueva solicitud</p>
-  <label>Nombre</label><br/>
-  <input (keyup)="nombre($event)"><br/>
-  <label>Apellido1</label><br/>
-  <input (keyup)="apellido1($event)"><br/>
-  <label>Apellido2</label><br/>
-  <input (keyup)="apellido2($event)"><br/>
-  <button (click)="enviar()">Enviar</button>
+<div class="container my-5">
+  <div class="card">
+    <div class="card-header">
+      <h5><i class="bi bi-file-text"></i> Solicitud de Comedor - Nueva Solicitud</h5>
+    </div>
+    <div class="card-body">
+      <form>
+        <fieldset class="border p-3">
+          <legend class="w-auto px-2">Datos del solicitante</legend>
+          <div class="row g-2">
+            <div class="col-md-2">
+              <label for="nombre" class="form-label">N.I.F.</label>
+              <input type="text" class="form-control" id="nif" name="nif" (keyup)="nif($event)" #inputNif>
+              <div class="alert alert-danger" role="alert" *ngIf="!solicitud.nif.length">Debe indicar el N.I.F.</div>
+              <div class="alert alert-danger" role="alert" *ngIf="solicitud.nif.length < 9">La longitud mínima del nombre es de 9 caracteres.</div>
+            </div>
+            <div class="col-md-4">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" (keyup)="nombre($event)" #inputNombre>
+              <div class="alert alert-danger" role="alert" *ngIf="!solicitud.nombre.length">Debe indicar el nombre. </div>
+              <div class="alert alert-danger" role="alert" *ngIf="solicitud.nombre.length < 4">La longitud mínima del nombre es de 4 caracteres.</div>
+            </div>
+            <div class="col-md-3">
+              <label for="apellido1" class="form-label">Primer Apellido</label>
+              <input type="text" class="form-control" id="apellido1" name="apellido1" (keyup)="apellido1($event)" #inputApellido1>
+              <div class="alert alert-danger" role="alert" *ngIf="!solicitud.apellido1.length">Debe indicar el primer apellido.</div>
+            </div>
+            <div class="col-md-3">
+              <label for="apellido1" class="form-label">Segundo Apellido</label>
+              <input type="text" class="form-control" id="apellido2" name="apellido2" (keyup)="apellido2($event)" #inputApellido2>
+              <div class="alert alert-danger" role="alert" *ngIf="!solicitud.apellido2.length">Debe indicar el segundo apellido.</div>
+            </div>
+
+            <div class="col-md-1">
+              <label for="tipoVia" class="form-label">Tipo de Vía</label>
+              <select id="tipoVia" class="form-select">
+                <option selected>Calle</option>
+                <option>Avenida</option>
+                <option>Paseo</option>
+              </select>
+            </div>
+            <div class="col-md-5">
+              <label for="nombreVia" class="form-label">Nombre de la vía</label>
+              <input type="text" id="nombreVia" class="form-control">
+            </div>
+            <div class="col-md-1">
+              <label for="numero" class="form-label">Número</label>
+              <input type="text" id="numero" class="form-control">
+            </div>
+            <div class="col-md-1">
+              <label for="portal" class="form-label">Portal</label>
+              <input type="text" id="portal" class="form-control">
+            </div>
+            <div class="col-md-1">
+              <label for="piso" class="form-label">Piso</label>
+              <input type="text" id="piso" class="form-control">
+            </div>
+            <div class="col-md-1">
+              <label for="escalera" class="form-label">Escalera</label>
+              <input type="text" id="escalera" class="form-control">
+            </div>
+            <div class="col-md-1">
+              <label for="puerta" class="form-label">Puerta</label>
+              <input type="text" id="puerta" class="form-control">
+            </div>
+            <div class="col-md-1">
+              <label for="codPostal" class="form-label">Cód. Postal</label>
+              <input type="text" id="codPostal" class="form-control">
+            </div>
+
+            <div class="col-md-2">
+              <label for="telefono1" class="form-label">Teléfono 1</label>
+              <input type="text" id="telefono1" class="form-control">
+            </div>
+            <div class="col-md-2">
+              <label for="telefono2" class="form-label">Teléfono 2</label>
+              <input type="text" id="telefono2" class="form-control">
+            </div>
+            <div class="col-md-2">
+              <label for="fax" class="form-label">FAX</label>
+              <input type="text" id="fax" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" id="email" class="form-control">
+            </div>
+
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="card-footer text-muted text-end">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary mr-3" (click)="enviar()">Enviar</button>
+        <button class="btn btn-secondary mr-3" (click)="guardar('param1')">Guardar</button>
+        <button class="btn btn-secondary mr-3" (click)="eliminar('param2')">Eliminar</button>
+        <button class="btn btn-secondary" (click)="limpiar('param3')">Limpiar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container my-5">
+  <p>{{solicitud.nombre + ' ' + solicitud.apellido1 + ' ' + solicitud.apellido2}}</p>
+  <p [style.color]=" + solicitud.numero > 50 ? 'red' : 'blue'">solicitud works!</p>
+  <p
+    [ngStyle]="{'background-color':solicitud.numero > 50 ? 'lightgreen' : 'orange', 'font-weight': solicitud.numero > 50 ? 'bold' : 'normal' }">
+    solicitud works!</p>
+  <p [ngClass]="{
+      'text-success':solicitud.numero <= 33,
+      'text-primary':solicitud.numero > 33 && solicitud.numero < 66,
+      'text-danger':solicitud.numero >=66
+    }">{{ solicitud.nombre }} {{ solicitud.apellido1 }} {{ solicitud.apellido2 }}
+  </p>
 </div>

@@ -1,0 +1,2 @@
+Se maqueta el formulario con Bootstrap 5.
+Se muestran mensajes de validación de los campos nif, nombre, apellido1 y apellido2 con *ngIf.
