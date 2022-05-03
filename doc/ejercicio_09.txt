@@ -1,0 +1,1 @@
+Inserción de un nuevo componente Centro y uso de template con backticks.
