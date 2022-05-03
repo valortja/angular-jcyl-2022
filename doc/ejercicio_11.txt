@@ -1,0 +1,6 @@
+Componente de selección de centro con:
+  * Input con event binding.
+  * Filtrado en código.
+  * Listado con directiva *ngFor.
+  * Selección con event binding.
+  * Renderizado con property data binding.

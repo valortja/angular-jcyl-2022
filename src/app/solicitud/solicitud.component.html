@@ -102,6 +102,10 @@
   </div>
 </div>
 <div class="container my-5">
+
+  <h5>Centro</h5>
+  <app-selector-centro></app-selector-centro>
+
   <h5>Lista de Solicitudes (con lista de elementos)</h5>
     <ul>
       <li *ngFor='let s of solicitudes'>{{s.nif + ' - ' + s.nombre + ' ' + s.apellido1 + ' ' + s.apellido2 }} </li>
@@ -130,6 +134,7 @@
     </tbody>
   </table>
 </div>
+<!--
 <div class="container my-5">
   <p>{{solicitud.nombre + ' ' + solicitud.apellido1 + ' ' + solicitud.apellido2}}</p>
   <p [style.color]=" + solicitud.numero > 50 ? 'red' : 'blue'">solicitud works!</p>
@@ -143,3 +148,4 @@
     }">{{ solicitud.nombre }} {{ solicitud.apellido1 }} {{ solicitud.apellido2 }}
   </p>
 </div>
+-->
