@@ -8,7 +8,7 @@ import { Centro } from '../centros/centros.component';
   template: `
     <input (keyup)="buscarCentro($event)" [value]="centroSeleccionado?.nombre">
     <ul>
-      <li *ngFor="let c of centrosFiltrados" (click)="seleccionarCentro(c)" role="button">{{c?.nombre}} </li>
+      <li *ngFor="let c of centrosFiltrados" (click)="seleccionarCentro(c)" role="button">{{c?.nombre | titlecase | slice:0:-7 }} </li>
     </ul>
   `,
   styleUrls: ['./selector-centro.component.css']
@@ -17,8 +17,8 @@ import { Centro } from '../centros/centros.component';
 export class SelectorCentroComponent implements OnInit {
 
   centros: Centro[] = [
-    {nombre: "Ponce de León"},
-    {nombre: "San Agustín"}
+    {nombre: "Ponce de León, 09012"},
+    {nombre: "San Agustín, 47008"}
   ]
 
   centrosFiltrados: Centro[] = [];
