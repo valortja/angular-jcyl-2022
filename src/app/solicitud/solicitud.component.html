@@ -10,25 +10,27 @@
           <div class="row g-2">
             <div class="col-md-2">
               <label for="nombre" class="form-label">N.I.F.</label>
-              <input type="text" class="form-control" id="nif" name="nif" (keyup)="nif($event)" #inputNif>
+              <input type="text" class="form-control" id="nif" name="nif" (keyup)="nif($event)" #inputNif [value]="this.solicitud.nif">
               <div class="alert alert-danger" role="alert" *ngIf="!solicitud.nif.length">Debe indicar el N.I.F.</div>
-              <div class="alert alert-danger" role="alert" *ngIf="solicitud.nif.length < 9">La longitud mínima del nombre es de 9 caracteres.</div>
+              <div class="alert alert-danger" role="alert" *ngIf="solicitud.nif.length < 9">El N.I.F. tiene que tener 9 caracteres.</div>
             </div>
             <div class="col-md-4">
               <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" (keyup)="nombre($event)" #inputNombre>
+              <input type="text" class="form-control" id="nombre" name="nombre" (keyup)="nombre($event)" #inputNombre [value]="this.solicitud.nombre">
               <div class="alert alert-danger" role="alert" *ngIf="!solicitud.nombre.length">Debe indicar el nombre. </div>
-              <div class="alert alert-danger" role="alert" *ngIf="solicitud.nombre.length < 4">La longitud mínima del nombre es de 4 caracteres.</div>
+              <div class="alert alert-danger" role="alert" *ngIf="solicitud.nombre.length < 3">La longitud mínima del nombre es de 3 caracteres.</div>
             </div>
             <div class="col-md-3">
               <label for="apellido1" class="form-label">Primer Apellido</label>
-              <input type="text" class="form-control" id="apellido1" name="apellido1" (keyup)="apellido1($event)" #inputApellido1>
+              <input type="text" class="form-control" id="apellido1" name="apellido1" (keyup)="apellido1($event)" #inputApellido1 [value]="this.solicitud.apellido1">
               <div class="alert alert-danger" role="alert" *ngIf="!solicitud.apellido1.length">Debe indicar el primer apellido.</div>
+              <div class="alert alert-danger" role="alert" *ngIf="solicitud.apellido1.length < 3">La longitud mínima del primer apellido es de 3 caracteres.</div>
             </div>
             <div class="col-md-3">
               <label for="apellido1" class="form-label">Segundo Apellido</label>
-              <input type="text" class="form-control" id="apellido2" name="apellido2" (keyup)="apellido2($event)" #inputApellido2>
+              <input type="text" class="form-control" id="apellido2" name="apellido2" (keyup)="apellido2($event)" #inputApellido2 [value]="this.solicitud.apellido2">
               <div class="alert alert-danger" role="alert" *ngIf="!solicitud.apellido2.length">Debe indicar el segundo apellido.</div>
+              <div class="alert alert-danger" role="alert" *ngIf="solicitud.apellido2.length < 3">La longitud mínima del segundo apellido es de 3 caracteres.</div>
             </div>
 
             <div class="col-md-1">
@@ -91,13 +93,42 @@
     </div>
     <div class="card-footer text-muted text-end">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary mr-3" (click)="enviar()">Enviar</button>
+        <button class="btn btn-primary mr-3" [ngClass]="{'disabled':getDisabled()}"(click)="enviar()">Enviar</button>
         <button class="btn btn-secondary mr-3" (click)="guardar('param1')">Guardar</button>
         <button class="btn btn-secondary mr-3" (click)="eliminar('param2')">Eliminar</button>
         <button class="btn btn-secondary" (click)="limpiar('param3')">Limpiar</button>
       </div>
     </div>
   </div>
+</div>
+<div class="container my-5">
+  <h5>Lista de Solicitudes (con lista de elementos)</h5>
+    <ul>
+    <li *ngFor='let s of solicitudes'>{{s.nif + ' - ' + s.nombre + ' ' + s.apellido1 + ' ' + s.apellido2 }} </li>
+  </ul>
+  <h5>Lista de Solicitudes (con tabla)</h5>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nº</th>
+        <th scope="col">N.I.F.</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Primer Apellido</th>
+        <th scope="col">Segundo Apellido</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let s of solicitudes; let i = index'>
+        <td>{{i + 1}}</td>
+        <td>{{s.nif}}</td>
+        <td>{{s.nombre}}</td>
+        <td>{{s.apellido1}}</td>
+        <td>{{s.apellido2}}</td>
+        <td><button class="btn btn-secondary mr-3" (click)="eliminar(s.nif)">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div class="container my-5">
   <p>{{solicitud.nombre + ' ' + solicitud.apellido1 + ' ' + solicitud.apellido2}}</p>
