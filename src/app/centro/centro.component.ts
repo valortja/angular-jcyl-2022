@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Centro } from '../centros/centros.component';
 
 const textoCuerpo = "Inserción de un nuevo componente.";
 
 @Component({
   selector: 'app-centro',
   //templateUrl: './centro.component.html',
+  /*
   template: `
     <div class="container my-5">
       <div class="card">
@@ -17,10 +19,17 @@ const textoCuerpo = "Inserción de un nuevo componente.";
       </div>
     </div>
   `,
+  */
+  template: `
+    {{centro?.nombre}}
+  `,
   styleUrls: ['./centro.component.css']
 })
 
 export class CentroComponent implements OnInit {
+
+  @Input()
+  centro?: Centro;
 
   constructor() { }
 

@@ -1,0 +1,2 @@
+Enviar el valor del centro del componente padre (solicitud) al hijo (centro).
+Uso de interpolación.
