@@ -105,10 +105,9 @@
 
   <h5>Centro</h5>
   <app-selector-centro></app-selector-centro>
-
   <h5>Lista de Solicitudes (con lista de elementos)</h5>
     <ul>
-      <li *ngFor='let s of solicitudes'>{{s.nif + ' - ' + s.nombre + ' ' + s.apellido1 + ' ' + s.apellido2 }} </li>
+      <li *ngFor='let solicitud of solicitudes'><app-fila-solicitud [solicitud]="solicitud" (solicitudEliminada)="eliminar(solicitud)"></app-fila-solicitud></li>
     </ul>
   <h5>Lista de Solicitudes (con tabla)</h5>
   <table class="table table-striped table-hover">
@@ -123,13 +122,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let s of solicitudes; let i = index'>
-        <td>{{i + 1}}</td>
-        <td>{{s.nif}}</td>
-        <td>{{s.nombre}}</td>
-        <td>{{s.apellido1}}</td>
-        <td>{{s.apellido2}}</td>
-        <td><button class="btn btn-secondary mr-3" (click)="eliminar(s.nif)">Eliminar</button></td>
+      <tr *ngFor='let solicitud of solicitudes; let indice = index'>
+        <td>{{indice + 1}}</td>
+        <td>{{solicitud.nif}}</td>
+        <td>{{solicitud.nombre}}</td>
+        <td>{{solicitud.apellido1}}</td>
+        <td>{{solicitud.apellido2}}</td>
+        <td><button class="btn btn-secondary mr-3" (click)="eliminar(solicitud)">Eliminar</button></td>
       </tr>
     </tbody>
   </table>

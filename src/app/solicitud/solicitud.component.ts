@@ -68,9 +68,9 @@ export class SolicitudComponent implements OnInit {
     console.log('guardar ' + param + '!');
   }
 
-  eliminar(param:string) {
-    console.log('eliminar ' + param + '!');
-    this.solicitudes = this.solicitudes.filter(s => s.nif !== param);
+  eliminar(solicitud: any) {
+    console.log('eliminar ' + solicitud + '!');
+    this.solicitudes = this.solicitudes.filter(s => s.nif !== solicitud.nif);
   }
 
   limpiar(param:string) {

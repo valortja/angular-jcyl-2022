@@ -1,0 +1,3 @@
+Uso de Outputs.
+Comunicación de componentes hijos a padres.
+Eliminación de una fila de solicitud desde el hijo.
