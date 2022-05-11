@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SolicitudService } from '../solicitud.service';
 
 @Component({
   selector: 'app-solicitud',
@@ -15,46 +16,11 @@ export class SolicitudComponent implements OnInit {
     apellido2: 'Segura'
   };
 
-  solicitudes = [
-    {
-      numero: 1,
-      nif: '9999999R',
-      nombre: 'Armando',
-      apellido1: 'Guerra',
-      apellido2: 'Segura'
-    },
-    {
-      numero: 2,
-      nif: '00000000T',
-      nombre: 'Aitor',
-      apellido1: 'Bellino',
-      apellido2: 'Campestre'
-    },
-    {
-      numero: 3,
-      nif: '1111111H',
-      nombre: 'Francisco',
-      apellido1: 'Miendo',
-      apellido2: 'Montones'
-    },
-    {
-      numero: 4,
-      nif: '22222222J',
-      nombre: 'Iñaki',
-      apellido1: 'Osko',
-      apellido2: 'Cerrado'
-    },
-    {
-      numero: 5,
-      nif: '33333333P',
-      nombre: 'Orcar',
-      apellido1: 'Panta',
-      apellido2: 'Hambriento'
-    }
-  ]
+  solicitudes;
 
 
-  constructor() {
+  constructor(private solicitudService: SolicitudService) {
+    this.solicitudes = solicitudService.getSolicitudes();
     setInterval(() => {
         this.solicitud.numero = Math.floor(Math.random() * (101));
         //this.solicitud.nombre = 'Armando-' + this.solicitud.numero;
