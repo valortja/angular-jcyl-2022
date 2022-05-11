@@ -116,8 +116,7 @@
         <th scope="col">Nº</th>
         <th scope="col">N.I.F.</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Primer Apellido</th>
-        <th scope="col">Segundo Apellido</th>
+        <th scope="col">Apellidos</th>
         <th scope="col">Acciones</th>
       </tr>
     </thead>
@@ -126,8 +125,7 @@
         <td>{{indice + 1}}</td>
         <td>{{solicitud.nif}}</td>
         <td>{{solicitud.nombre}}</td>
-        <td>{{solicitud.apellido1}}</td>
-        <td>{{solicitud.apellido2}}</td>
+        <td>{{solicitud.apellidos}}</td>
         <td><button class="btn btn-secondary mr-3" (click)="eliminar(solicitud)">Eliminar</button></td>
       </tr>
     </tbody>

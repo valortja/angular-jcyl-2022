@@ -16,11 +16,15 @@ export class SolicitudComponent implements OnInit {
     apellido2: 'Segura'
   };
 
-  solicitudes;
+  solicitudes: any;
 
 
   constructor(private solicitudService: SolicitudService) {
-    this.solicitudes = solicitudService.getSolicitudes();
+
+    solicitudService.getSolicitudes().then(
+      (data:any) => this.solicitudes = data.items.map((x:any) => x.fields)
+    );
+
     setInterval(() => {
         this.solicitud.numero = Math.floor(Math.random() * (101));
         //this.solicitud.nombre = 'Armando-' + this.solicitud.numero;
@@ -35,8 +39,8 @@ export class SolicitudComponent implements OnInit {
   }
 
   eliminar(solicitud: any) {
-    console.log('eliminar ' + solicitud + '!');
-    this.solicitudes = this.solicitudes.filter(s => s.nif !== solicitud.nif);
+    //console.log('eliminar ' + solicitud + '!');
+    //this.solicitudes = this.solicitudes.filter(s => s.nif !== solicitud.nif);
   }
 
   limpiar(param:string) {
